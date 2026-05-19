@@ -10,7 +10,7 @@ export default defineConfig({
     outDir: 'dist/client',
     assetsDir: 'assets',
     rollupOptions: {
-      input: ['./index.html'],
+      input: ['./spa-index.html'],
     },
   },
 });

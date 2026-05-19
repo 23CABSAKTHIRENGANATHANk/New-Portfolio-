@@ -76,12 +76,12 @@ export function Hero() {
               View Work <ArrowDown className="w-4 h-4" />
             </a>
             <a
-              href="https://sakthirenganathan7.netlify.app"
+              href="/resume.html"
               target="_blank"
               rel="noreferrer"
               className="px-6 py-3 rounded-full glass font-semibold hover:bg-white/10 transition inline-flex items-center gap-2"
             >
-              <Download className="w-4 h-4" /> Portfolio
+              <Download className="w-4 h-4" /> Resume
             </a>
           </div>
 

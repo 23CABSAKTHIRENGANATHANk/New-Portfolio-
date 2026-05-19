@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:client": "vite build --config vite.client.config.ts",
     "preview": "vite preview",
+    "vercel-build": "npm run build:client",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

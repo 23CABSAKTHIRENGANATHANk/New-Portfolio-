@@ -65,7 +65,7 @@ export function Hero() {
             Crafting{" "}
             <span className="text-foreground font-medium">interactive</span>,{" "}
             <span className="text-foreground font-medium">AI-powered</span> web experiences
-            from Chennai, India.
+            from Madurai, India.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

@@ -85,12 +85,6 @@ export function CustomCursor() {
       {/* Outer ring — lags behind */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999] mix-blend-difference"
-        style={{
-          x: ringX,
-          y: ringY,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
         animate={{
           width: hovering ? 48 : clicking ? 20 : 32,
           height: hovering ? 48 : clicking ? 20 : 32,
@@ -117,12 +111,6 @@ export function CustomCursor() {
       {/* Inner dot — instant */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999]"
-        style={{
-          x: dotX,
-          y: dotY,
-          translateX: "-50%",
-          translateY: "-50%",
-        }}
         animate={{
           width: clicking ? 6 : hovering ? 6 : 6,
           height: clicking ? 6 : hovering ? 6 : 6,

@@ -2,12 +2,27 @@ import { motion } from "framer-motion";
 import { Scene3D } from "./Scene3D";
 import profileMain from "@/assets/profile-main.jpeg";
 import { ArrowDown, Download, Github, Linkedin } from "lucide-react";
+import { useTypingAnimation } from "@/hooks/useTypingAnimation";
+
+const ROLES = [
+  "Full Stack Developer",
+  "AI Builder",
+  "React Engineer",
+  "UI Craftsman",
+  "Problem Solver",
+];
 
 export function Hero() {
+  const { displayed } = useTypingAnimation(ROLES, {
+    typeSpeed: 75,
+    deleteSpeed: 40,
+    pauseAfterType: 2000,
+  });
+
   return (
     <section
       id="home"
-      className="relative min-h-screen flex flex-col md:flex-row items-center pt-28 pb-20 overflow-hidden"
+      className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10 opacity-40 [background-image:linear-gradient(oklch(1_0_0/0.05)_1px,transparent_1px),linear-gradient(90deg,oklch(1_0_0/0.05)_1px,transparent_1px)] [background-size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
 
@@ -27,16 +42,30 @@ export function Hero() {
             Available for opportunities
           </motion.div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
+          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
             Hi, I'm <span className="text-gradient">Sakthi</span>
             <br />
             Renganathan
           </h1>
-          <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-lg">
-            Full Stack Developer crafting
-            <span className="text-foreground font-medium"> interactive</span>,
-            <span className="text-foreground font-medium"> AI-powered</span> web experiences from
-            Madurai, India.
+
+          {/* Typing animation subtitle */}
+          <div className="mt-5 h-8 flex items-center">
+            <span className="text-xl sm:text-2xl font-semibold text-gradient">
+              {displayed}
+            </span>
+            {/* Blinking cursor */}
+            <motion.span
+              animate={{ opacity: [1, 0, 1] }}
+              transition={{ duration: 0.85, repeat: Infinity, ease: "steps(1)" }}
+              className="ml-0.5 inline-block w-[2px] h-6 bg-primary rounded-full"
+            />
+          </div>
+
+          <p className="mt-4 text-base text-muted-foreground max-w-lg leading-relaxed">
+            Crafting{" "}
+            <span className="text-foreground font-medium">interactive</span>,{" "}
+            <span className="text-foreground font-medium">AI-powered</span> web experiences
+            from Chennai, India.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -73,7 +102,7 @@ export function Hero() {
             >
               <Linkedin className="w-5 h-5" />
             </a>
-            <span className="text-xs">Madurai, TN · India</span>
+            <span className="text-xs">Chennai, TN · India</span>
           </div>
         </motion.div>
 

@@ -7,6 +7,7 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
+import { CustomCursor } from "@/components/portfolio/CustomCursor";
 
 import appCss from "../styles.css?url";
 
@@ -110,7 +111,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
+      <body className="cursor-none">
         {children}
         <Scripts />
       </body>
@@ -123,6 +124,7 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <CustomCursor />
       <Outlet />
     </QueryClientProvider>
   );

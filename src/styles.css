@@ -227,4 +227,17 @@
       opacity: 0.6;
     }
   }
+
+  /* ── Custom cursor: hide native cursor site-wide ── */
+  .cursor-none,
+  .cursor-none *,
+  .cursor-none a,
+  .cursor-none button,
+  .cursor-none input,
+  .cursor-none textarea,
+  .cursor-none select,
+  .cursor-none label,
+  .cursor-none [role="button"] {
+    cursor: none !important;
+  }
 }

@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
+    "build:client": "vite build --config vite.client.config.ts",
     "build:dev": "vite build --mode development",
     "preview": "vite preview",
-    "vercel-build": "npm run build && node ./scripts/generate-vercel-index.cjs",
+    "vercel-build": "npm run build:client && node ./scripts/generate-vercel-index.cjs",
     "lint": "eslint .",
     "format": "prettier --write ."
   },

@@ -11,6 +11,8 @@ const links = [
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll);
@@ -31,10 +33,23 @@ export function Navbar() {
           <span className="text-gradient">Sakthi</span>
           <span className="text-foreground"> Renganathan K</span>
         </a>
-        <ul className="hidden md:flex items-center gap-8 text-sm text-muted-foreground">
+        <button
+          className="md:hidden text-muted-foreground focus:outline-none"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {menuOpen ? "Close" : "Menu"}
+        </button>
+        <ul
+          className={`${
+            menuOpen ? "block" : "hidden"
+          } md:flex items-center gap-8 text-sm text-muted-foreground`}
+        >
           {links.map((l) => (
             <li key={l.href}>
-              <a href={l.href} className="hover:text-foreground transition-colors relative group">
+              <a
+                href={l.href}
+                className="hover:text-foreground transition-colors relative group"
+              >
                 {l.label}
                 <span className="absolute -bottom-1 left-0 h-px w-0 bg-gradient-primary transition-all group-hover:w-full" />
               </a>
@@ -43,7 +58,7 @@ export function Navbar() {
         </ul>
         <a
           href="#contact"
-          className="px-4 py-2 rounded-full bg-gradient-primary text-primary-foreground text-sm font-semibold shadow-glow hover:scale-105 transition-transform"
+          className="hidden md:block px-4 py-2 rounded-full bg-gradient-primary text-primary-foreground text-sm font-semibold shadow-glow hover:scale-105 transition-transform"
         >
           Let's talk
         </a>

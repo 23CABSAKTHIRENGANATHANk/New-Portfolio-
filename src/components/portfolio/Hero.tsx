@@ -7,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center pt-28 pb-20 overflow-hidden"
+      className="relative min-h-screen flex flex-col md:flex-row items-center pt-28 pb-20 overflow-hidden"
     >
       <div className="absolute inset-0 -z-10 opacity-40 [background-image:linear-gradient(oklch(1_0_0/0.05)_1px,transparent_1px),linear-gradient(90deg,oklch(1_0_0/0.05)_1px,transparent_1px)] [background-size:40px_40px] [mask-image:radial-gradient(ellipse_at_center,black_30%,transparent_75%)]" />
 
@@ -27,16 +27,16 @@ export function Hero() {
             Available for opportunities
           </motion.div>
 
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.05]">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.05]">
             Hi, I'm <span className="text-gradient">Sakthi</span>
             <br />
             Renganathan
           </h1>
-          <p className="mt-6 text-lg text-muted-foreground max-w-lg">
-            Full Stack Developer crafting{" "}
-            <span className="text-foreground font-medium">interactive</span>,{" "}
-            <span className="text-foreground font-medium">AI-powered</span> web experiences from
-            Chennai, India.
+          <p className="mt-6 text-base sm:text-lg text-muted-foreground max-w-lg">
+            Full Stack Developer crafting
+            <span className="text-foreground font-medium"> interactive</span>,
+            <span className="text-foreground font-medium"> AI-powered</span> web experiences from
+            Madurai, India.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">

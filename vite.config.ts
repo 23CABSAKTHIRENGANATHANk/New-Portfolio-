@@ -13,10 +13,14 @@ export default defineConfig({
   plugins: [
     !isVercel && cloudflare({ viteEnvironment: { name: "ssr" } }),
     tanstackStart({
-      ssr: !isVercel,
+      prerender: {
+        routes: ['/'],
+        crawlLinks: false,
+        enabled: true,
+      }
     }),
     tailwindcss(),
     react(),
     tsconfigPaths(),
-  ].filter(Boolean),
+  ],
 });

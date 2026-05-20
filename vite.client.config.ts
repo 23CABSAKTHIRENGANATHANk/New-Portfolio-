@@ -4,7 +4,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 import tailwindcss from '@tailwindcss/vite';
 import { TanStackRouterVite } from '@tanstack/router-plugin/vite';
 
-// Client-only Vite config for static builds (used by Vercel)
+// Client-only Vite config for static builds (legacy/optional; not used by the current Vercel build)
 export default defineConfig({
   plugins: [TanStackRouterVite(), tailwindcss(), react(), tsconfigPaths()],
   build: {

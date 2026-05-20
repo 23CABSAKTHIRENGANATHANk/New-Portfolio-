@@ -34,8 +34,12 @@ export function Navbar() {
           <span className="text-foreground"> Renganathan K</span>
         </a>
         <button
-          className="md:hidden text-muted-foreground focus:outline-none"
+          type="button"
+          className="md:hidden text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
           onClick={() => setMenuOpen(!menuOpen)}
+          aria-controls="primary-navigation"
+          aria-expanded={menuOpen}
+          aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
         >
           {menuOpen ? "Close" : "Menu"}
         </button>

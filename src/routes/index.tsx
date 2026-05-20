@@ -24,6 +24,15 @@ export const Route = createFileRoute("/")({
           "Interactive portfolio: React, Three.js, AI-powered apps and modern web experiences.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: "https://sakthirenganathan7.netlify.app/og-preview.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://sakthirenganathan7.netlify.app/og-preview.png" },
+    ],
+    links: [
+      {
+        rel: "canonical",
+        href: "https://sakthirenganathan7.netlify.app/",
+      },
     ],
   }),
   component: Index,

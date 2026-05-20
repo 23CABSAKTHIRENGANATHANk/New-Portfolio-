@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { useMemo, useState } from "react";
 import { Section } from "./Section";
 import { ArrowUpRight, Github, Globe, Clock } from "lucide-react";
 
@@ -109,6 +110,18 @@ const projects: Project[] = [
 ];
 
 export function Projects() {
+  const [selectedTag, setSelectedTag] = useState("All");
+
+  const allTags = useMemo(
+    () => ["All", ...Array.from(new Set(projects.flatMap((project) => project.tags)))],
+    []
+  );
+
+  const filteredProjects =
+    selectedTag === "All"
+      ? projects
+      : projects.filter((project) => project.tags.includes(selectedTag));
+
   return (
     <Section
       id="projects"
@@ -119,8 +132,29 @@ export function Projects() {
         </>
       }
     >
+      <div className="mb-8 flex flex-wrap items-center gap-3">
+        {allTags.map((tag) => (
+          <button
+            key={tag}
+            type="button"
+            onClick={() => setSelectedTag(tag)}
+            aria-pressed={selectedTag === tag}
+            className={`rounded-full px-4 py-2 text-xs font-semibold transition-all duration-200 ${
+              selectedTag === tag
+                ? "bg-primary text-primary-foreground shadow-glow"
+                : "bg-white/5 text-muted-foreground hover:bg-white/10"
+            }`}
+          >
+            {tag}
+          </button>
+        ))}
+      </div>
+      <div className="mb-6 text-sm text-muted-foreground">
+        Showing <span className="font-semibold text-foreground">{filteredProjects.length}</span>{" "}
+        project{filteredProjects.length === 1 ? "" : "s"} for <span className="font-semibold text-foreground">{selectedTag}</span>
+      </div>
       <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-        {projects.map((p, i) => (
+        {filteredProjects.map((p, i) => (
           <motion.div
             key={p.title}
             initial={{ opacity: 0, y: 30 }}

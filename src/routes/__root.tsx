@@ -8,6 +8,7 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import { CustomCursor } from "@/components/portfolio/CustomCursor";
+import { useEffect } from "react";
 
 import appCss from "../styles.css?url";
 
@@ -90,9 +91,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "Interactive portfolio: React, Three.js, AI-powered apps and modern web experiences.",
       },
       { property: "og:type", content: "website" },
-      { name: "twitter:card", content: "summary" },
+      { property: "og:image", content: "https://sakthirenganathan7.netlify.app/og-preview.png" },
+      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: "https://sakthirenganathan7.netlify.app/og-preview.png" },
+      { name: "robots", content: "index, follow" },
+      { name: "theme-color", content: "#0f172a" },
     ],
     links: [
+      {
+        rel: "canonical",
+        href: "https://sakthirenganathan7.netlify.app/",
+      },
       {
         rel: "stylesheet",
         href: appCss,
@@ -106,10 +115,34 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 });
 
 function RootShell({ children }: { children: React.ReactNode }) {
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Sakthi Renganathan K",
+    url: "https://sakthirenganathan7.netlify.app/",
+    sameAs: [
+      "https://www.linkedin.com/in/sakthi-renganathan-k/",
+      "https://github.com/23CABSAKTHIRENGANATHANk",
+    ],
+    jobTitle: "Full Stack Developer",
+    description:
+      "Portfolio of Sakthi Renganathan K — Full Stack & Frontend Developer based in Madurai, building interactive web experiences with React, Three.js, and modern UI/UX.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Madurai",
+      addressRegion: "Tamil Nadu",
+      addressCountry: "India",
+    },
+  };
+
   return (
     <html lang="en">
       <head>
         <HeadContent />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className="cursor-none">
         {children}
@@ -121,6 +154,22 @@ function RootShell({ children }: { children: React.ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const pageViews = Number(window.localStorage.getItem("portfolio_page_views") || 0) + 1;
+    window.localStorage.setItem("portfolio_page_views", String(pageViews));
+
+    const dataLayer = (window as any).dataLayer || [];
+    dataLayer.push({
+      event: "pageview",
+      page: window.location.pathname,
+      timestamp: Date.now(),
+      views: pageViews,
+    });
+    (window as any).dataLayer = dataLayer;
+  }, []);
 
   return (
     <QueryClientProvider client={queryClient}>

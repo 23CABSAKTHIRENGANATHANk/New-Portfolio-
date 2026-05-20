@@ -79,59 +79,17 @@ export function Contact() {
           })}
         </div>
 
-        <form
-          action="https://formsubmit.co/sakthirenganathankadalkarai@gmail.com"
-          method="POST"
-          target="_blank"
-          className="mt-10 rounded-3xl border border-white/10 bg-white/5 p-8 shadow-glow"
-        >
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_subject" value="Portfolio contact request" />
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm">
-              <span className="font-medium text-foreground">Name</span>
-              <input
-                type="text"
-                name="name"
-                placeholder="Your name"
-                required
-                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-              />
-            </label>
-            <label className="grid gap-2 text-sm">
-              <span className="font-medium text-foreground">Email</span>
-              <input
-                type="email"
-                name="email"
-                placeholder="you@example.com"
-                required
-                className="w-full rounded-xl border border-input bg-background px-4 py-3 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-              />
-            </label>
-            <label className="grid gap-2 text-sm sm:col-span-2">
-              <span className="font-medium text-foreground">Message</span>
-              <textarea
-                name="message"
-                placeholder="Tell me about your project, deadline, or availability."
-                rows={6}
-                required
-                minLength={20}
-                className="w-full rounded-3xl border border-input bg-background px-4 py-3 text-sm text-foreground shadow-sm focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
-              />
-            </label>
-          </div>
-          <div className="mt-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-            <button
-              type="submit"
-              className="inline-flex items-center justify-center rounded-full bg-gradient-primary px-6 py-3 text-sm font-semibold text-primary-foreground shadow-glow hover:scale-105 transition-transform"
-            >
-              Send message
-            </button>
-            <p className="text-xs text-muted-foreground max-w-md">
-              Secure, privacy-friendly contact with optional direct email fallback.
-            </p>
-          </div>
-        </form>
+        <div className="mt-10 text-center">
+          <a
+            href="mailto:sakthirenganathankadalkarai@gmail.com"
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-primary text-primary-foreground font-semibold shadow-glow hover:scale-105 transition-transform"
+          >
+            <Mail className="w-5 h-5" /> Say hello
+          </a>
+          <p className="mt-4 text-xs text-muted-foreground max-w-xl mx-auto">
+            Feel free to send a message directly via email. I’ll reply as soon as possible.
+          </p>
+        </div>
       </motion.div>
       <footer className="text-center text-xs text-muted-foreground mt-12">
         © {new Date().getFullYear()} Sakthi Renganathan K · Crafted with React, Three.js & a lot of

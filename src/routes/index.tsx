@@ -15,7 +15,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Portfolio of Sakthi Renganathan K — Full Stack & Frontend Developer based in Chennai, building AI-powered, interactive web experiences with React, Three.js, and modern UI/UX.",
+          "Portfolio of Sakthi Renganathan K — Full Stack & Frontend Developer based in Madurai, building AI-powered, interactive web experiences with React, Three.js, and modern UI/UX.",
       },
       { property: "og:title", content: "Sakthi Renganathan K — Full Stack Developer" },
       {

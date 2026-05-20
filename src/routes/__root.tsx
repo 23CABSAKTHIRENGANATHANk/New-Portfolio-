@@ -77,7 +77,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       {
         name: "description",
         content:
-          "Portfolio of Sakthi Renganathan K — Full Stack & Frontend Developer based in Chennai, building interactive web experiences with React, Three.js, and modern UI/UX.",
+          "Portfolio of Sakthi Renganathan K — Full Stack & Frontend Developer based in Madurai, building interactive web experiences with React, Three.js, and modern UI/UX.",
       },
       { name: "author", content: "Sakthi Renganathan" },
       {

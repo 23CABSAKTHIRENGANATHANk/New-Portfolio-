@@ -22,7 +22,7 @@
 
 A modern, high-performance personal developer portfolio built with cutting-edge web technologies. Features server-side rendering via Cloudflare Workers, immersive 3D graphics, smooth Framer Motion animations, and a fully interactive photo gallery with lightbox.
 
-> Designed to impress — crafted with ❤️ from Chennai, India.
+> Designed to impress — crafted with ❤️ from Madurai, India.
 
 ---
 
@@ -212,7 +212,7 @@ plugins: [
 - 🌐 Portfolio: [sakthirenganathan7.netlify.app](https://sakthirenganathan7.netlify.app/)
 - 💼 LinkedIn: [linkedin.com/in/sakthi-renganathan-k](https://www.linkedin.com/in/sakthi-renganathan-k/)
 - 🐙 GitHub: [github.com/23CABSAKTHIRENGANATHANk](https://github.com/23CABSAKTHIRENGANATHANk)
-- 📍 Chennai, TN · India
+- 📍 Madurai, TN · India
 
 ---
 

@@ -102,7 +102,7 @@ export function Hero() {
             >
               <Linkedin className="w-5 h-5" />
             </a>
-            <span className="text-xs">Chennai, TN · India</span>
+            <span className="text-xs">Madurai, TN · India</span>
           </div>
         </motion.div>
 

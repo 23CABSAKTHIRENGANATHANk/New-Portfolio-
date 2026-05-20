@@ -132,21 +132,6 @@ export function Contact() {
             </p>
           </div>
         </form>
-
-        <div className="mt-10 grid gap-4 sm:grid-cols-2">
-          <div className="rounded-3xl border border-white/10 bg-background/70 p-6">
-            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Trust</div>
-            <p className="mt-3 text-sm text-foreground">
-              Built for privacy-first interactions and modern web performance. No third-party tracking is enabled by default.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-white/10 bg-background/70 p-6">
-            <div className="text-xs uppercase tracking-[0.25em] text-muted-foreground">Analytics</div>
-            <p className="mt-3 text-sm text-foreground">
-              Analytics-ready with lightweight data-layer tracking and client-side performance metrics.
-            </p>
-          </div>
-        </div>
       </motion.div>
       <footer className="text-center text-xs text-muted-foreground mt-12">
         © {new Date().getFullYear()} Sakthi Renganathan K · Crafted with React, Three.js & a lot of
